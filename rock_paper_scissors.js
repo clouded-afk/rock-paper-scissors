@@ -8,3 +8,21 @@
     // an entire game is 5 rounds
     // for each round continue to add to the score
     // whoever has the highest score at the end of the 5 rounds is declared the winner
+
+
+
+
+
+function getComputerChoice() {
+    let computerChoice = Math.floor(Math.random() * 3)
+    if (computerChoice === 0) {
+        computerChoice = "rock";
+    } else if (computerChoice === 1) {
+        computerChoice = "paper";
+    } else if (computerChoice === 2) {
+        computerChoice = "scissors"
+    }
+    return computerChoice
+}
+
+console.log(getComputerChoice())
