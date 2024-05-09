@@ -12,7 +12,7 @@
 
 
 
-
+// Generates a random number between 0-2, the number is variable is then assigned to rock, paper, or scissors based on the random number generated
 function getComputerChoice() {
     let computerChoice = Math.floor(Math.random() * 3)
     if (computerChoice === 0) {
@@ -25,4 +25,17 @@ function getComputerChoice() {
     return computerChoice
 }
 
-console.log(getComputerChoice())
+
+// Prompts user to enter rock, paper, or scissors. Accounts for 3 different ways of entering the option and converts the user choice to all lowercase
+function getHumanChoice() {
+    let humanChoice = prompt("Enter rock, paper, or scissors!")
+    if (humanChoice === "rock" || humanChoice === "ROCK" || humanChoice === "Rock") {
+        humanChoice = "rock"
+    } else if (humanChoice === "paper" || humanChoice === "PAPER" || humanChoice === "Paper") {
+        humanChoice = "paper"
+    } else if (humanChoice === "scissors" || humanChoice === "SCISSORS" || humanChoice === "Scissors") {
+        humanChoice = "scissors"
+    }
+    return humanChoice
+}
+
