@@ -39,3 +39,6 @@ function getHumanChoice() {
     return humanChoice
 }
 
+// Variables to keep track of user and computer score
+let humanScore = 0
+let computerScore = 0
