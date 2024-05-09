@@ -9,9 +9,6 @@
     // for each round continue to add to the score
     // whoever has the highest score at the end of the 5 rounds is declared the winner
 
-
-
-
 // Generates a random number between 0-2, the number is variable is then assigned to rock, paper, or scissors based on the random number generated
 function getComputerChoice() {
     let computerChoice = Math.floor(Math.random() * 3);
@@ -25,7 +22,6 @@ function getComputerChoice() {
     return computerChoice;
 }
 
-
 // Prompts user to enter rock, paper, or scissors. Accounts for 3 different ways of entering the option and converts the user choice to all lowercase
 function getUserChoice() {
     let userChoice = prompt("Enter rock, paper, or scissors!").toLowerCase();
@@ -35,11 +31,9 @@ function getUserChoice() {
     return userChoice;
 }
 
+// Variables to keep track of each score
 let userScore = 0;
 let computerScore = 0;
-
-const userSelection = getUserChoice();
-const computerSelection = getComputerChoice();
 
 // Takes the users choice and the computers choice and adds to the respective score based on the result of the round
 function playRound(userChoice, computerChoice) {
