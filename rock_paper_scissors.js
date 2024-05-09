@@ -29,16 +29,10 @@ function getComputerChoice() {
 // Prompts user to enter rock, paper, or scissors. Accounts for 3 different ways of entering the option and converts the user choice to all lowercase
 function getHumanChoice() {
     let humanChoice = prompt("Enter rock, paper, or scissors!")
-    if (humanChoice === "rock" || humanChoice === "ROCK" || humanChoice === "Rock") {
-        humanChoice = "rock"
-    } else if (humanChoice === "paper" || humanChoice === "PAPER" || humanChoice === "Paper") {
-        humanChoice = "paper"
-    } else if (humanChoice === "scissors" || humanChoice === "SCISSORS" || humanChoice === "Scissors") {
-        humanChoice = "scissors"
-    }
     return humanChoice
 }
 
 // Variables to keep track of user and computer score
 let humanScore = 0
 let computerScore = 0
+
