@@ -41,7 +41,7 @@ let computerScore = 0;
 const userSelection = getUserChoice();
 const computerSelection = getComputerChoice();
 
-
+// Takes the users choice and the computers choice and adds to the respective score based on the result of the round
 function playRound(userChoice, computerChoice) {
     if (userChoice === computerChoice) {
         console.log("Result of the round is a draw! Nobody gets a point!");
@@ -61,14 +61,3 @@ function playRound(userChoice, computerChoice) {
     }
     console.log(`User Score: ${userScore} | Computer Score: ${computerScore}`)
 }
-
-function playGame() {
-    const totalRounds = 5;
-    let currentRound = 1;
-    while (currentRound <= totalRounds) {
-        playRound(getUserChoice(), getComputerChoice());
-        currentRound++
-    }
-}
-
-console.log(playGame())
