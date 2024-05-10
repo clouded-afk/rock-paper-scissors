@@ -35,23 +35,45 @@ function getUserChoice() {
 let userScore = 0;
 let computerScore = 0;
 
+
 // Takes the users choice and the computers choice and adds to the respective score based on the result of the round
 function playRound(userChoice, computerChoice) {
     if (userChoice === computerChoice) {
         console.log("Result of the round is a draw! Nobody gets a point!");
     } else if (userChoice === "rock" && computerChoice === "scissors") {
         userScore++
-        console.log("You win! Rock beats Scissors!")
+        console.log("You win! Rock beats Scissors!");
     } else if (userChoice === "paper" && computerChoice === "rock") {
         userScore++
-        console.log("You win! Paper beats Rock!")
-    } else if (userChoice === "scissors" && computerChoice === "rock") {
+        console.log("You win! Paper beats Rock!");
+    } else if (userChoice === "scissors" && computerChoice === "paper") {
         userScore++
-        console.log("You win! Paper beats Rock!")
+        console.log("You win! Paper beats Rock!");
     }
     else {
         computerScore++
-        console.log(`You lose! ${computerChoice[0].toUpperCase() + computerChoice.slice(1)} beats ${userChoice[0].toUpperCase() + userChoice.slice(1)}!`)
+        console.log(`You lose! ${computerChoice[0].toUpperCase() + computerChoice.slice(1)} beats ${userChoice[0].toUpperCase() + userChoice.slice(1)}!`);
     }
-    console.log(`User Score: ${userScore} | Computer Score: ${computerScore}`)
+    console.log(`User Score: ${userScore} | Computer Score: ${computerScore}`);
 }
+
+
+// Runs the playRound function 5 times to simulate the 5 rounds, after the game has finished a winner is declared based on who had the other score, if scores are the same it results in a draw
+function playGame() {
+    const totalRounds = 5
+    for (i = 1; i <=5; i++) {
+        let userSelection = getUserChoice();
+        let computerSelection = getComputerChoice();
+        playRound(userSelection, computerSelection);
+    }
+    if (userScore < computerScore) {
+        console.log("Better luck next time! Computer Wins!");
+    } else if (userScore > computerScore) {
+        console.log("Congratulations! You Win!");
+    } else {
+        console.log("It's a draw! Nobody wins!")
+    }
+    console.log("If you would like to play again, please refresh the page!")
+}
+
+playGame()
