@@ -59,6 +59,8 @@ function playRound(userChoice, computerChoice) {
 
 
 // Runs the playRound function 5 times to simulate the 5 rounds, after the game has finished a winner is declared based on who had the other score, if scores are the same it results in a draw
+
+/*
 function playGame() {
     const totalRounds = 5
     for (i = 1; i <=5; i++) {
@@ -77,3 +79,4 @@ function playGame() {
 }
 
 playGame()
+*/
