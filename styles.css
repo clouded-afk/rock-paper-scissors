@@ -1,0 +1,25 @@
+* {
+    background-color: bisque;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 1100px;
+    margin: 0 auto;
+}
+
+.header h1{
+    background-color: white;
+    color: #014421;
+    padding: 50px;
+    text-align: center;
+    font-size: 60px;
+    border-color: #014421;
+    border-style: solid;
+    border-width: 5px;
+    border-radius: 25px;
+    margin-left: 100px;
+    margin-right: 100px;
+    margin-top: 50px;
+}
