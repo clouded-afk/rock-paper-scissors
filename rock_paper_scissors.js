@@ -9,6 +9,17 @@
     // for each round continue to add to the score
     // whoever has the highest score at the end of the 5 rounds is declared the winner
 
+
+
+
+// Variables to add interactivity and manipulate the webpage
+const rockBtn = document.querySelector("#rock-btn");
+const paperBtn = document.querySelector("#paper-btn");
+const scissorsBtn = document.querySelector("#scissors-btn");
+const playerScore = document.querySelector(".user-score");
+const cpuScore = document.querySelector(".computer-score");
+const roundInfo = document.querySelector(".round-info");
+
 // Generates a random number between 0-2, the number is variable is then assigned to rock, paper, or scissors based on the random number generated
 function getComputerChoice() {
     let computerChoice = Math.floor(Math.random() * 3);
@@ -22,15 +33,6 @@ function getComputerChoice() {
     return computerChoice;
 }
 
-// Prompts user to enter rock, paper, or scissors. Accounts for 3 different ways of entering the option and converts the user choice to all lowercase
-function getUserChoice() {
-    let userChoice = prompt("Enter rock, paper, or scissors!").toLowerCase();
-    while (userChoice != "rock" && userChoice != "paper" && userChoice != "scissors") {
-        userChoice = prompt("Invalid choice. please enter rock, paper, or scissors!").toLowerCase();
-    }
-    return userChoice;
-}
-
 // Variables to keep track of each score
 let userScore = 0;
 let computerScore = 0;
@@ -39,44 +41,62 @@ let computerScore = 0;
 // Takes the users choice and the computers choice and adds to the respective score based on the result of the round
 function playRound(userChoice, computerChoice) {
     if (userChoice === computerChoice) {
-        console.log("Result of the round is a draw! Nobody gets a point!");
+        roundInfo.textContent = "Round is a draw! No points!";
     } else if (userChoice === "rock" && computerChoice === "scissors") {
         userScore++
-        console.log("You win! Rock beats Scissors!");
+        playerScore.textContent = `Player Score: ${userScore}`;
+        roundInfo.textContent = `You win! ${userChoice} beats ${computerChoice}!`;
     } else if (userChoice === "paper" && computerChoice === "rock") {
         userScore++
-        console.log("You win! Paper beats Rock!");
+        playerScore.textContent = `Player Score: ${userScore}`;
+        roundInfo.textContent = `You win! ${userChoice} beats ${computerChoice}!`;
     } else if (userChoice === "scissors" && computerChoice === "paper") {
         userScore++
-        console.log("You win! Paper beats Rock!");
+        playerScore.textContent = `Player Score: ${userScore}`;
+        roundInfo.textContent = `You win! ${userChoice} beats ${computerChoice}!`;
     }
     else {
         computerScore++
-        console.log(`You lose! ${computerChoice[0].toUpperCase() + computerChoice.slice(1)} beats ${userChoice[0].toUpperCase() + userChoice.slice(1)}!`);
+        cpuScore.textContent = `Computer Score: ${computerScore}`
+        roundInfo.textContent = `You lose! ${computerChoice} bests ${userChoice}!`
     }
-    console.log(`User Score: ${userScore} | Computer Score: ${computerScore}`);
+    checkWinner();
 }
 
 
-// Runs the playRound function 5 times to simulate the 5 rounds, after the game has finished a winner is declared based on who had the other score, if scores are the same it results in a draw
-
-/*
-function playGame() {
-    const totalRounds = 5
-    for (i = 1; i <=5; i++) {
-        let userSelection = getUserChoice();
-        let computerSelection = getComputerChoice();
-        playRound(userSelection, computerSelection);
+// Checks for winner based on who reaches 5 points first, then disbales the buttons when the user or cpu score reaches 5
+function checkWinner() {
+    if (computerScore === 5) {
+        roundInfo.textContent = "You Lose! Computer Wins!"
+        rockBtn.disabled = true;
+        paperBtn.disabled = true;
+        scissorsBtn.disabled = true;
+    } else if (userScore === 5) {
+        roundInfo.textContent = "You Win! Computer Loses!"
+        rockBtn.disabled = true;
+        paperBtn.disabled = true;
+        scissorsBtn.disabled = true;
     }
-    if (userScore < computerScore) {
-        console.log("Better luck next time! Computer Wins!");
-    } else if (userScore > computerScore) {
-        console.log("Congratulations! You Win!");
-    } else {
-        console.log("It's a draw! Nobody wins!")
-    }
-    console.log("If you would like to play again, please refresh the page!")
-}
+};
 
-playGame()
-*/
+
+
+
+// Buttons to accept user input
+rockBtn.addEventListener('click', function(){
+    let userSelection = "rock";
+    let computerSelection = getComputerChoice();
+    playRound(userSelection, computerSelection);
+});
+
+paperBtn.addEventListener('click', function(){
+    let userSelection = "paper";
+    let computerSelection = getComputerChoice();
+    playRound(userSelection, computerSelection);
+});
+
+scissorsBtn.addEventListener('click', function(){
+    let userSelection = "scissors";
+    let computerSelection = getComputerChoice();
+    playRound(userSelection, computerSelection);
+});
