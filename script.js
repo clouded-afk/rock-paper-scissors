@@ -64,7 +64,6 @@ function playRound(userChoice, computerChoice) {
     checkWinner();
 }
 
-
 // Checks for winner based on who reaches 5 points first, then disbales the buttons when the user or cpu score reaches 5
 function checkWinner() {
     if (computerScore === 5) {
@@ -79,9 +78,6 @@ function checkWinner() {
         scissorsBtn.disabled = true;
     }
 };
-
-
-
 
 // Buttons to accept user input
 rockBtn.addEventListener('click', function(){
