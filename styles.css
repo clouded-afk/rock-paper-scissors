@@ -9,17 +9,30 @@
     margin: 0 auto;
 }
 
-.header h1{
+.header {
     background-color: white;
-    color: #014421;
     padding: 50px;
     text-align: center;
-    font-size: 60px;
     border: 5px solid #014421;
     border-radius: 25px;
     margin-left: 100px;
     margin-right: 100px;
     margin-top: 50px;
+}
+
+h1 {
+    font-size: 60px;
+    color: #014421;
+    background-color: white;
+}
+
+.win-condition {
+    background-color: white;
+    color: #014421;
+    font-size: 24px;
+    padding-top: 20px;
+    font-style: italic;
+    text-decoration: underline;
 }
 
 .game-box {
@@ -125,4 +138,22 @@
     color: #014421;
     font-size: 24px;
     font-weight: bolder;
+}
+
+.restart-box {
+    display: flex;
+    justify-content: center;
+}
+
+.restart-btn {
+    width: 100px;
+    height: 25px;
+    background-color: #014421;
+    border-color: white;
+    border-radius: 5px;
+    color: white;
+}
+
+.restart-btn:hover {
+    background-color: darkgray;
 }
