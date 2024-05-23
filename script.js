@@ -10,8 +10,6 @@
     // whoever has the highest score at the end of the 5 rounds is declared the winner
 
 
-
-
 // Variables to add interactivity and manipulate the webpage
 const rockBtn = document.querySelector("#rock-btn");
 const paperBtn = document.querySelector("#paper-btn");
@@ -20,24 +18,31 @@ const playerScore = document.querySelector(".user-score");
 const cpuScore = document.querySelector(".computer-score");
 const roundInfo = document.querySelector(".round-info");
 const restartbtn = document.querySelector(".restart-btn")
-
 const clickRock = document.querySelector("#click-rock");
 const clickPaper = document.querySelector("#click-paper");
 const clickScissors = document.querySelector("#click-scissors");
-
 const cpuRock = document.querySelector("#cpu-rock");
 const cpuPaper = document.querySelector("#cpu-paper");
 const cpuScissors = document.querySelector("#cpu-scissors");
 
-// Generates a random number between 0-2, the number is variable is then assigned to rock, paper, or scissors based on the random number generated
+// Generates a random number between 0-2, the number is variable is then assigned to rock, paper, or scissors based on the random number generated, displays computer choice
 function getComputerChoice() {
     let computerChoice = Math.floor(Math.random() * 3);
     if (computerChoice === 0) {
         computerChoice = "rock";
+        cpuRock.style.display = "block";
+        cpuPaper.style.display = "none";
+        cpuScissors.style.display = "none";
     } else if (computerChoice === 1) {
         computerChoice = "paper";
+        cpuPaper.style.display = "block";
+        cpuRock.style.display = "none";
+        cpuScissors.style.display = "none";
     } else if (computerChoice === 2) {
         computerChoice = "scissors";
+        cpuScissors.style.display = "block";
+        cpuRock.style.display = "none";
+        cpuPaper.style.display = "none";
     }
     return computerChoice;
 }
@@ -87,7 +92,7 @@ function checkWinner() {
     }
 };
 
-// Buttons to accept user input
+// Buttons to accept user input and displays choice on button click
 rockBtn.addEventListener('click', function(){
     let userSelection = "rock";
     let computerSelection = getComputerChoice();
@@ -116,7 +121,6 @@ scissorsBtn.addEventListener('click', function(){
 });
 
 // Button to reload the page
-
 restartbtn.addEventListener('click', function(){
     window.location.reload();
 });

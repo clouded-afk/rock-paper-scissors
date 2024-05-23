@@ -157,7 +157,7 @@ h1 {
     background-color: darkgray;
 }
 
-#click-rock, #click-paper, #click-scissors {
+#click-rock, #click-paper, #click-scissors, #cpu-rock, #cpu-paper, #cpu-scissors {
     position: absolute;
     height: 100px;
     width: 100px;
