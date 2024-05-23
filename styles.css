@@ -156,3 +156,11 @@ h1 {
 .restart-btn:hover {
     background-color: darkgray;
 }
+
+#click-rock, #click-paper, #click-scissors {
+    position: absolute;
+    height: 100px;
+    width: 100px;
+    padding-top: 10px;
+}
+

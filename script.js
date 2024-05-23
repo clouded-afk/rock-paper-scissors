@@ -21,6 +21,14 @@ const cpuScore = document.querySelector(".computer-score");
 const roundInfo = document.querySelector(".round-info");
 const restartbtn = document.querySelector(".restart-btn")
 
+const clickRock = document.querySelector("#click-rock");
+const clickPaper = document.querySelector("#click-paper");
+const clickScissors = document.querySelector("#click-scissors");
+
+const cpuRock = document.querySelector("#cpu-rock");
+const cpuPaper = document.querySelector("#cpu-paper");
+const cpuScissors = document.querySelector("#cpu-scissors");
+
 // Generates a random number between 0-2, the number is variable is then assigned to rock, paper, or scissors based on the random number generated
 function getComputerChoice() {
     let computerChoice = Math.floor(Math.random() * 3);
@@ -84,18 +92,27 @@ rockBtn.addEventListener('click', function(){
     let userSelection = "rock";
     let computerSelection = getComputerChoice();
     playRound(userSelection, computerSelection);
+    clickRock.style.display = "block";
+    clickPaper.style.display = "none";
+    clickScissors.style.display = "none";
 });
 
 paperBtn.addEventListener('click', function(){
     let userSelection = "paper";
     let computerSelection = getComputerChoice();
     playRound(userSelection, computerSelection);
+    clickPaper.style.display = "block";
+    clickRock.style.display = "none";
+    clickScissors.style.display = "none";
 });
 
 scissorsBtn.addEventListener('click', function(){
     let userSelection = "scissors";
     let computerSelection = getComputerChoice();
     playRound(userSelection, computerSelection);
+    clickScissors.style.display = "block"
+    clickRock.style.display = "none";
+    clickPaper.style.display = "none";
 });
 
 // Button to reload the page
@@ -103,3 +120,4 @@ scissorsBtn.addEventListener('click', function(){
 restartbtn.addEventListener('click', function(){
     window.location.reload();
 });
+
