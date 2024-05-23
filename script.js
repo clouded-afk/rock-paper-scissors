@@ -72,7 +72,7 @@ function playRound(userChoice, computerChoice) {
     else {
         computerScore++
         cpuScore.textContent = `Computer Score: ${computerScore}`
-        roundInfo.textContent = `You lose! ${computerChoice} bests ${userChoice}!`
+        roundInfo.textContent = `You lose! ${computerChoice} beats ${userChoice}!`
     }
     checkWinner();
 }
